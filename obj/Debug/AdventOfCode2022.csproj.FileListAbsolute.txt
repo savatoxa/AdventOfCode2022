@@ -1,0 +1,7 @@
+D:\Sava\coursera\CS\AdventOfCode2022\bin\Debug\AdventOfCode2022.exe.config
+D:\Sava\coursera\CS\AdventOfCode2022\bin\Debug\AdventOfCode2022.exe
+D:\Sava\coursera\CS\AdventOfCode2022\bin\Debug\AdventOfCode2022.pdb
+D:\Sava\coursera\CS\AdventOfCode2022\obj\Debug\AdventOfCode2022.csproj.AssemblyReference.cache
+D:\Sava\coursera\CS\AdventOfCode2022\obj\Debug\AdventOfCode2022.csproj.CoreCompileInputs.cache
+D:\Sava\coursera\CS\AdventOfCode2022\obj\Debug\AdventOfCode2022.exe
+D:\Sava\coursera\CS\AdventOfCode2022\obj\Debug\AdventOfCode2022.pdb
