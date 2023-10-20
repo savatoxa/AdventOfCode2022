@@ -1,19 +1,42 @@
 ﻿using System;
 using System.IO;
 
+public static class DirectoriesMethods
+{
+	public static string DirUp(string dirName, int depth)
+	{
+		for (var i = dirName.Length - 1; i > 0; i--)
+		{
+			if (dirName[i].ToString() == "\\")
+			{
+				var dirParentName = dirName.Substring(0, i);
+				depth--;
+				if (depth == 0)
+					return dirParentName;
+				else
+					return DirUp(dirParentName, depth);
+			}
+		}
+		return dirName.Substring(0,2);
+	}
+}
+
 class Program
 {
 	static void Main(string[] args)
 	{
-		string dataStr_01 = File.ReadAllText(@"d:\Sava\coursera\CS\AdventOfCode2022\data_01.txt");
-		string dataStr_02 = File.ReadAllText(@"d:\Sava\coursera\CS\AdventOfCode2022\data_02.txt");
-		string dataStr_03 = File.ReadAllText(@"d:\Sava\coursera\CS\AdventOfCode2022\data_03.txt");
-		string dataStr_04 = File.ReadAllText(@"d:\Sava\coursera\CS\AdventOfCode2022\data_04.txt");
-		string dataStr_05 = File.ReadAllText(@"d:\Sava\coursera\CS\AdventOfCode2022\data_05.txt");
-		string dataStr_06 = File.ReadAllText(@"d:\Sava\coursera\CS\AdventOfCode2022\data_06.txt");
-		string dataStr_07 = File.ReadAllText(@"d:\Sava\coursera\CS\AdventOfCode2022\data_07.txt");
-		string dataStr_08 = File.ReadAllText(@"d:\Sava\coursera\CS\AdventOfCode2022\data_08.txt");
-		string dataStr_09 = File.ReadAllText(@"d:\Sava\coursera\CS\AdventOfCode2022\data_09.txt");
+		var workingDirectory = DirectoriesMethods.DirUp(Environment.CurrentDirectory, 2);
+
+		string dataStr_01 = File.ReadAllText(workingDirectory + "\\" + "data_01.txt");
+		string dataStr_02 = File.ReadAllText(workingDirectory + "\\" + "data_02.txt");
+		string dataStr_03 = File.ReadAllText(workingDirectory + "\\" + "data_03.txt");
+		string dataStr_04 = File.ReadAllText(workingDirectory + "\\" + "data_04.txt");
+		string dataStr_05 = File.ReadAllText(workingDirectory + "\\" + "data_05.txt");
+		string dataStr_06 = File.ReadAllText(workingDirectory + "\\" + "data_06.txt");
+		string dataStr_07 = File.ReadAllText(workingDirectory + "\\" + "data_07.txt");
+		string dataStr_08 = File.ReadAllText(workingDirectory + "\\" + "data_08.txt");
+		string dataStr_09 = File.ReadAllText(workingDirectory + "\\" + "data_09.txt");
+
 		Parser parser = new Parser();
 		Scanner_01 scanner_01 = new Scanner_01();
 		Scanner_02 scanner_02 = new Scanner_02();
